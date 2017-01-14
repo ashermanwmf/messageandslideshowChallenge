@@ -1,6 +1,61 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .main-navigation {
   background-color: #8F8F8F;
   color: white;
+  font-size: 3em;
+  padding: 1%;
 }
 
 .main-navigation h1 {
@@ -9,12 +64,15 @@
   -webkit-margin-after: 0em !important;
 }
 
+/*MESSAGES SECTION*/
 .messages {
+  display: inline-block;
   width: 60%;
   overflow: scroll;
   border-right: 1px solid black;
+  padding-top: 1%;
   padding-right: 1.5%;
-  padding-left: .5%;
+  padding-left: 1.5%;
 }
 
 .input-message {
@@ -24,7 +82,6 @@
   font-size: 2em;
   padding: 2%;
   margin-top: 1%;
-  margin-bottom:1%;
 }
 
 .button-post {
@@ -35,3 +92,81 @@
   margin-left: 2.5%;
   font-size: 2em;
 }
+
+.button-category {
+  position: relative;
+  font-size: 2em;
+  width: 32%;
+  height: 70px;
+  background-color: white;
+  color: gray;
+}
+
+hr {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.message-container {
+  border: 1px solid black;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+.profile-image {
+  display: inline-block;
+  width: 15%;
+  border: 1px solid black;
+}
+
+.message {
+  position: relative;
+  display: inline-block;
+  margin-top: 1%;
+  padding-left: 2%;
+  vertical-align: top;
+  width: 82%;
+  font-size: 1.2em;
+}
+
+.message p {
+  position: relative;
+  margin-left: 1%;
+  height: 60px;
+}
+
+.message-info {
+  vertical-align: bottom !important; 
+}
+
+.message span {
+  display: inline-block;
+  color: gray;
+  padding-right: 2%;
+}
+
+.username {
+  color: blue !important;
+  text-decoration: underline;
+}
+/*MESSAGES SECTION*/
+
+/*SLIDESHOW SECTION*/
+.slide-show {
+  display: inline-block;
+  vertical-align: top;
+  padding: 2%;
+  width: 32.8%;
+}
+
+.slideshow-image img {
+  position: relative;
+  width: 100%;
+}
+
+.slide-show h1 {
+  font-size: 2em;
+}
+/*SLIDESHOW SECTION*/
+
+

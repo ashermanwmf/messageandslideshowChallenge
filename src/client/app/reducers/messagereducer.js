@@ -2,10 +2,18 @@ import _ from "lodash";
 
 const initialState = {
   PUBLIC: [
-    {message: "hello, this is a public message", name: "Andrew", createdAt: "timestamp"}
+    {
+      message: "PUBLIC ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae orci quis metus euismod laoreet sed id est. Praesent sit amet sapies.", 
+      name: "Andrew", 
+      createdAt: new Date()
+    }
   ],
   PRIVATE: [
-    {message: "hello, this is a private message", name: "Andrew", createdAt: "timestamp"}
+    {
+      message: "PRIVATE ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae orci quis metus euismod laoreet sed id est. Praesent sit amet sapie.", 
+      name: "Andrew", 
+      createdAt: new Date()
+    }
   ]
 };
 
@@ -16,7 +24,7 @@ export default (state = initialState, action) =>{
       let newMessage = {
         message: action.message,
         name: "Andrew",
-        createdAt: "timestamp"
+        createdAt: new Date()
       };
 
       action.category = action.category === "ALL" ? "PUBLIC" : action.category;

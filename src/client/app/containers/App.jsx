@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Message from "../components/Message.jsx";
+import SlideShow from "../components/SlideShow.jsx";
 import slideShowData from "../slideShow.json";
 import changeCategoryAction from "../actions/changecategory";
 import messageSubmitAction from "../actions/messagesubmit";
@@ -22,6 +23,31 @@ class App extends Component {
   changeMessageType(e) {
     this.props.changeCategoryAction(e.target.innerText);
   }
+  sortMessages(array) {
+    if(array.length === 1) return array;
+
+    let mid = Math.floor(array.length / 2);
+
+    let left = array.slice(0, mid);
+    let right = array.slice(mid);
+
+    left = this.sortMessages(left);
+    right = this.sortMessages(right);
+
+    let result = [];
+    let i = 0;
+    let j = 0;
+
+    while(result.length !== left.length + right.length){
+      if(left[i] === undefined || left[i].createdAt > right[j].createdAt){
+        result.push(right[j++]);
+      }else if(right[j] === undefined || left[i].createdAt <= right[j].createdAt){
+        result.push(left[i++]);
+      }
+    }
+
+    return result;
+  }
   reply(username) {
     this.refs.message.value = `reply:@${username} `;
   }
@@ -32,20 +58,32 @@ class App extends Component {
     let category = this.props.category;
     let messages = [];
 
+    const categoryStyleObj = {
+      "ALL": {"marginRight": "2%"},
+      "PUBLIC": {"marginRight": "2%"},
+      "PRIVATE": {}
+    };
+
     const messageObj = {
       "ALL": messages.concat(this.props.messages.PUBLIC, this.props.messages.PRIVATE),
       "PUBLIC": messages.concat(this.props.messages.PUBLIC),
       "PRIVATE": messages.concat(this.props.messages.PRIVATE)
     };
 
+    categoryStyleObj[category]["backgroundColor"] = "#CCCCCC";
+
     messages = messageObj[category];
+
+    messages = messages.sort((a, b) =>{
+      return a.createdAt < b.createdAt;
+    });
 
     return (
       <div>
         <nav className="main-navigation">
           <h1> Notify </h1>
         </nav>
-        
+
         <section className="messages">
           <div className="form">
             <input ref="message" className="input-message" defaultValue="Say something..."/>
@@ -54,9 +92,9 @@ class App extends Component {
 
           <hr></hr>
 
-          <button className="button-category" onClick={this.changeMessageType.bind(this)}>ALL</button>
-          <button className="button-category" onClick={this.changeMessageType.bind(this)}>PUBLIC</button>
-          <button className="button-category" onClick={this.changeMessageType.bind(this)}>PRIVATE</button>
+          <button style={categoryStyleObj.ALL} className="button-category" onClick={this.changeMessageType.bind(this)}>ALL</button>
+          <button style={categoryStyleObj.PUBLIC} className="button-category" onClick={this.changeMessageType.bind(this)}>PUBLIC</button>
+          <button style={categoryStyleObj.PRIVATE} className="button-category" onClick={this.changeMessageType.bind(this)}>PRIVATE</button>
 
           <hr></hr>
 
@@ -75,6 +113,7 @@ class App extends Component {
         </section>
 
         <section className="slide-show">
+          <SlideShow data={slideShowData} />
         </section>
       </div>
     );

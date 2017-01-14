@@ -20,18 +20,18 @@ class SlideShow extends Component {
     let imgButtons;
 
     if(this.state.imageIndex === 0) {
-      imgButtons = <div><button onClick={this.forwardImage.bind(this)}>Forward</button></div>
+      imgButtons = <div><i className="slideshow-button forwardButton fa fa-arrow-circle-right" onClick={this.forwardImage.bind(this)} aria-hidden="true"></i></div>
     }else if(this.state.imageIndex > 0 && this.state.imageIndex < this.props.data.length - 1){
-      imgButtons = <div><button onClick={this.backImage.bind(this)}>Back</button><button onClick={this.forwardImage.bind(this)}>Forward</button></div>
+      imgButtons = <div><i className="slideshow-button backButton fa fa-arrow-circle-left" onClick={this.backImage.bind(this)} aria-hidden="true"></i><i className="slideshow-button forwardButton fa fa-arrow-circle-right" onClick={this.forwardImage.bind(this)} aria-hidden="true"></i></div>
     }else if(this.state.imageIndex === this.props.data.length - 1){
-      imgButtons = <div><button onClick={this.backImage.bind(this)}>Back</button></div>
+      imgButtons = <div><i className="slideshow-button backButton fa fa-arrow-circle-left" onClick={this.backImage.bind(this)} aria-hidden="true"></i></div>
     }
 
     return (
       <div className="slideshow-container">
         <div className="slideshow-image">
-          <img src={imgSrc} />
           {imgButtons}
+          <img src={imgSrc} />
         </div>
         <div className="slideshow-title">
           <h1><center>{imgTitle}</center></h1>

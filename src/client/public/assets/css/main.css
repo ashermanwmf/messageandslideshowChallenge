@@ -164,6 +164,23 @@ hr {
   width: 100%;
 }
 
+.slideshow-button {
+  font-size: 3em !important;
+  position: absolute;
+  z-index: 1000;
+  margin-top: 15%;
+  color: #999999;
+}
+
+.forwardButton {
+  margin-left: 25%;
+}
+
+.backButton {
+  margin-left: 5%;
+  float: left;
+}
+
 .slide-show h1 {
   font-size: 2em;
 }

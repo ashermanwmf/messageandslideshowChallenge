@@ -10,7 +10,7 @@ class Messages extends Component {
   }
   postMessage() {
     if(this.refs.message.value !== "Say something..."){
-      if(this.refs.message.value.length < 140){
+      if(this.refs.message.value.length <= 140){
         this.props.messageSubmitAction(this.refs.message.value, this.props.category);
         this.refs.message.value = "Say something...";
       }else {
@@ -52,9 +52,16 @@ class Messages extends Component {
 
     messages = messageObj[category];
 
-    messages = messages.sort((a, b) =>{
-      return a.createdAt < b.createdAt;
-    });
+    for(let i=0; i < messages.length ; i++){
+      let value = messages[i];
+      let j = i - 1;
+
+      for(; j >= 0 && messages[j].createdAt < value.createdAt; j--){
+        messages[j+1] = messages[j];
+      }
+
+      messages[j+1] = value;
+    }
 
     return (
       <div>

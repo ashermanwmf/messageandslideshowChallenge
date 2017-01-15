@@ -18,5 +18,3 @@ render((
     </Router>
   </Provider>
 ), document.getElementById('app'));
-
-module.exports = store;

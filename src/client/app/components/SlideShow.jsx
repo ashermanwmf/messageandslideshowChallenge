@@ -31,7 +31,7 @@ class SlideShow extends Component {
       <div className="slideshow-container">
         <div className="slideshow-image">
           {imgButtons}
-          <img src={imgSrc} />
+          <img alt={imgTitle} src={imgSrc} />
         </div>
         <div className="slideshow-title">
           <h2><center>{imgTitle}</center></h2>

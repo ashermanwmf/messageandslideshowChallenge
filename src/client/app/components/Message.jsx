@@ -17,7 +17,7 @@ class Message extends Component {
   render() {
     return (
       <div className="message-container" onMouseEnter={this.showButtons.bind(this)} onMouseLeave={this.hidButtons.bind(this)}>
-        <img className="profile-image" src="http://jennstrends.com/wp-content/uploads/2013/10/bad-profile-pic-2.jpeg" />
+        <img alt="profile image" className="profile-image" src="http://jennstrends.com/wp-content/uploads/2013/10/bad-profile-pic-2.jpeg" />
         
         <div className="message">
           <p>{this.props.message}</p>

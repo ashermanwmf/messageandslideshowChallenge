@@ -18,6 +18,11 @@ class Messages extends Component {
       }
     }
   }
+  clearValue() {
+    if(this.refs.message.value === "Say something..."){
+      this.refs.message.value = "";
+    }
+  }
   changeMessageType(e) {
     this.props.changeCategoryAction(e.target.innerText);
   }
@@ -54,7 +59,7 @@ class Messages extends Component {
     return (
       <div>
         <div className="form">
-          <input ref="message" className="input-message" defaultValue="Say something..."/>
+          <input ref="message" className="input-message" defaultValue="Say something..." onFocus={this.clearValue.bind(this)} />
           <button className="button-post" onClick={this.postMessage.bind(this)}>POST</button>
         </div>
 

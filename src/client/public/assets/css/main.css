@@ -55,13 +55,7 @@ body {
   background-color: #8F8F8F;
   color: white;
   font-size: 3em;
-  padding: 1%;
-}
-
-.main-navigation h1 {
-  margin: 0%;
-  -webkit-margin-before: 0em !important;
-  -webkit-margin-after: 0em !important;
+  padding: 1.5%;
 }
 
 /*MESSAGES SECTION*/
@@ -155,8 +149,8 @@ hr {
 .slide-show {
   display: inline-block;
   vertical-align: top;
-  padding: 2%;
-  width: 32.8%;
+  padding: 1.5%;
+  width: 33.7%;
 }
 
 .slideshow-image img {
@@ -168,16 +162,16 @@ hr {
   font-size: 3em !important;
   position: absolute;
   z-index: 1000;
-  margin-top: 15%;
+  margin-top: 18%;
   color: #999999;
 }
 
 .forwardButton {
-  margin-left: 25%;
+  margin-left: 28%;
 }
 
 .backButton {
-  margin-left: 5%;
+  margin-left: 3%;
   float: left;
 }
 

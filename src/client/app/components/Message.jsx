@@ -25,7 +25,7 @@ class Message extends Component {
             <span>Posted <Moment from={this.props.createdAt} ago></Moment> ago</span>
             <span className="username" >{this.props.name}</span>
             <i style={this.state.buttonCSS} onClick={() => this.props.reply(this.props.name)} className="fa fa-reply" aria-hidden="true"></i>
-            <i style={this.state.buttonCSS} onClick={() => this.props.renotify()} className="fa fa-refresh" aria-hidden="true" ></i>
+            <i style={this.state.buttonCSS} onClick={() => this.props.renotify()} className="fa fa-repeat" aria-hidden="true" ></i>
           </div>
         </div>
       </div>

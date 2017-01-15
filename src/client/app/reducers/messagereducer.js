@@ -6,12 +6,22 @@ const initialState = {
       message: "PUBLIC ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae orci quis metus euismod laoreet sed id est. Praesent sit amet sapies.", 
       name: "Andrew", 
       createdAt: new Date()
+    },
+    {
+      message: "PUBLIC ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae orci quis metus euismod laoreet sed id est. Praesent sit amet sapies.", 
+      name: "John", 
+      createdAt: new Date()
     }
   ],
   PRIVATE: [
     {
       message: "PRIVATE ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae orci quis metus euismod laoreet sed id est. Praesent sit amet sapie.", 
       name: "Andrew", 
+      createdAt: new Date()
+    },
+    {
+      message: "PRIVATE ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae orci quis metus euismod laoreet sed id est. Praesent sit amet sapie.", 
+      name: "John", 
       createdAt: new Date()
     }
   ]

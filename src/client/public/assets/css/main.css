@@ -62,7 +62,6 @@ body {
 .messages {
   display: inline-block;
   width: 60%;
-  overflow: scroll;
   border-right: 1px solid black;
   padding-top: 1%;
   padding-right: 1.5%;
@@ -130,7 +129,7 @@ hr {
 }
 
 .message-info {
-  vertical-align: bottom !important; 
+  vertical-align: bottom !important;
 }
 
 .message span {
@@ -139,8 +138,12 @@ hr {
   padding-right: 2%;
 }
 
+.message i {
+  color: gray;
+}
+
 .username {
-  color: blue !important;
+  color: #41B2FE !important;
   text-decoration: underline;
 }
 /*MESSAGES SECTION*/
@@ -175,9 +178,55 @@ hr {
   float: left;
 }
 
-.slide-show h1 {
+.slide-show h2 {
   font-size: 2em;
+  padding: 1%;
 }
 /*SLIDESHOW SECTION*/
 
 
+/*MOBILE VIEW*/
+@media (max-width: 950px){
+  /*MESSAGES SECTION*/
+  .messages {
+    display: block;
+    border: 0px;
+    width: 97%;
+    height: 500px;
+  }
+  .message-feed {
+    height: 300px;
+    overflow: scroll;
+  }
+  .input-message {
+    width: 70%;
+  }
+  .button-post {
+    width: 23%;
+  }
+  .message {
+    font-size: 1em;
+    width: 82%;
+  }
+  .message p {
+    height: 65px;
+  }
+  /*MESSAGES SECTION*/
+
+  /*SLIDESHOW SECTION*/
+  .slide-show {
+    width: 97%;
+  }
+  .slideshow-button {
+    margin-top: 50%;
+  }
+  .forwardButton {
+    margin-left: 83%;
+  }
+  .backButton {
+    margin-left: 5%;
+    float: left;
+  }
+  /*SLIDESHOW SECTION*/
+}
+/*MOBILE VIEW*/

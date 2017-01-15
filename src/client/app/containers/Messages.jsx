@@ -62,7 +62,7 @@ class Messages extends Component {
           <input ref="message" className="input-message" defaultValue="Say something..." onFocus={this.clearValue.bind(this)} />
           <button className="button-post" onClick={this.postMessage.bind(this)}>POST</button>
         </div>
-        
+
         <hr></hr>
 
         <button style={categoryStyleObj.ALL} className="button-category" onClick={this.changeMessageType.bind(this)}>ALL</button>
